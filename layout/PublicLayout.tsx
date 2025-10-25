@@ -15,7 +15,7 @@ const PublicLayout: React.FC<PublicLayoutProps> = ({ children }) => {
       <Navbar />
 
       {/* content */}
-      <main className={cn("flex-1 container mx-auto pt-[100px]")}>
+      <main className={cn("flex-1 container mx-auto pt-[50px] lg:pt-[100px]")}>
         {children}
       </main>
       <ChatPopover />

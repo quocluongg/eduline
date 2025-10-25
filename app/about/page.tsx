@@ -1,9 +1,10 @@
 import PublicLayout from "@/layout/PublicLayout";
 import ContactCard from "@/components/ContactCard";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, Heading } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { Text } from "@/components/Text";
 
 const icons = { MapPin, Phone, Mail, Clock };
 type IconKey = keyof typeof icons;
@@ -68,19 +69,11 @@ const About = () => {
     <PublicLayout>
       <div className="w-full bg-white">
         {/* hero */}
-        <div className="flex flex-col gap-4 px-6 sm:px-10 md:px-20 py-10 text-lg text-[#FAF5FF] bg-[#EEECFA]">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2E1D60] text-center md:text-left">
-            Liên hệ với chúng tôi
-          </h1>
-          <h1 className="text-lg sm:text-xl md:text-2xl text-[#2E1D60] text-center md:text-left">
-            Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn
-          </h1>
-          <img
-            src="https://ptit.edu.vn/wp-content/uploads/2025/06/gen-h-z6725576433040_61ec92e2b71dc98c67dc3603c0a09655.jpg"
-            alt="Học viện Công nghệ Bưu chính Viễn thông"
-            className="w-full max-h-[400px] object-cover rounded-3xl"
-          />
-        </div>
+        <img
+          src="https://ptit.edu.vn/wp-content/uploads/2025/06/gen-h-z6725576433040_61ec92e2b71dc98c67dc3603c0a09655.jpg"
+          alt="Học viện Công nghệ Bưu chính Viễn thông"
+          className="w-full min-h-[80%] object-cover"
+        />
 
         {/* content */}
         <div className="flex flex-col lg:flex-row gap-10 py-10 px-6 sm:px-10 md:px-20">

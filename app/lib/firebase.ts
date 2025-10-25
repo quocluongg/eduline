@@ -1,6 +1,13 @@
 import { initializeApp, getApps } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
+import {
+  getAuth,
+  signInWithEmailAndPassword as firebaseSignIn,
+  createUserWithEmailAndPassword as firebaseCreateUser,
+  signOut as firebaseSignOut,
+  onAuthStateChanged,
+  User
+} from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDruNogAKbIrLNfmOdio5jFWY-MuddoEkg",
@@ -15,5 +22,37 @@ const firebaseConfig = {
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 const db = getFirestore(app);
 const auth = getAuth(app);
+
+// Authentication helper functions
+export const signInWithEmailAndPassword = async (email: string, password: string) => {
+  try {
+    const userCredential = await firebaseSignIn(auth, email, password);
+    return { user: userCredential.user, error: null };
+  } catch (error: any) {
+    return { user: null, error: error.message };
+  }
+};
+
+export const createUserWithEmailAndPassword = async (email: string, password: string) => {
+  try {
+    const userCredential = await firebaseCreateUser(auth, email, password);
+    return { user: userCredential.user, error: null };
+  } catch (error: any) {
+    return { user: null, error: error.message };
+  }
+};
+
+export const signOut = async () => {
+  try {
+    await firebaseSignOut(auth);
+    return { error: null };
+  } catch (error: any) {
+    return { error: error.message };
+  }
+};
+
+export const onAuthChange = (callback: (user: User | null) => void) => {
+  return onAuthStateChanged(auth, callback);
+};
 
 export { app, db, auth };
