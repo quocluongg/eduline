@@ -4,6 +4,7 @@ import Stats from "./Stats";
 import NewAndReasearch from "./NewAndResearch";
 import SuccessStories from "./SuccessStories";
 import News from "./News";
+import Marquee from "./Marquee";
 
 const Homepage = () => {
   return (
@@ -22,6 +23,8 @@ const Homepage = () => {
 
       {/* news */}
       <NewAndReasearch />
+
+      <Marquee />
     </div>
   );
 };
