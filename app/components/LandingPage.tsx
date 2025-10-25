@@ -1,6 +1,8 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { Heading } from "@/components/Heading";
+import { Text } from "@/components/Text";
+import { useState } from "react";
 
 interface LandingPageProps {
   onStudentLookup: (studentId: string, verificationCode: string) => void;
@@ -9,41 +11,46 @@ interface LandingPageProps {
 const faqItems = [
   {
     question: "Làm thế nào để theo dõi kết quả học tập của con?",
-    answer: "Phụ huynh có thể tra cứu kết quả học tập thông qua hệ thống bằng cách nhập mã số sinh viên và mã xác thực được cung cấp bởi Khoa."
+    answer:
+      "Phụ huynh có thể tra cứu kết quả học tập thông qua hệ thống bằng cách nhập mã số sinh viên và mã xác thực được cung cấp bởi Khoa.",
   },
   {
     question: "Chương trình học có những môn gì?",
-    answer: "Chương trình đào tạo bao gồm các môn học chuyên ngành về Công nghệ Thông tin, cùng với các môn đại cương và kỹ năng mềm. Chi tiết có thể xem trong hồ sơ học tập của sinh viên."
+    answer:
+      "Chương trình đào tạo bao gồm các môn học chuyên ngành về Công nghệ Thông tin, cùng với các môn đại cương và kỹ năng mềm. Chi tiết có thể xem trong hồ sơ học tập của sinh viên.",
   },
   {
     question: "Sinh viên có cơ hội thực tập tại doanh nghiệp không?",
-    answer: "Có, sinh viên được tạo điều kiện thực tập tại các doanh nghiệp, công ty công nghệ trong và ngoài nước thông qua chương trình hợp tác của Khoa."
+    answer:
+      "Có, sinh viên được tạo điều kiện thực tập tại các doanh nghiệp, công ty công nghệ trong và ngoài nước thông qua chương trình hợp tác của Khoa.",
   },
   {
     question: "Học phí và các khoản chi phí khác?",
-    answer: "Học phí được tính theo số tín chỉ đăng ký mỗi học kỳ. Thông tin chi tiết về học phí sẽ được hiển thị trong phần tra cứu thông tin sinh viên."
+    answer:
+      "Học phí được tính theo số tín chỉ đăng ký mỗi học kỳ. Thông tin chi tiết về học phí sẽ được hiển thị trong phần tra cứu thông tin sinh viên.",
   },
   {
     question: "Cơ hội việc làm sau khi tốt nghiệp như thế nào?",
-    answer: "Sinh viên tốt nghiệp có nhiều cơ hội việc làm tại các công ty công nghệ, ngân hàng, viễn thông và các tập đoàn lớn với mức lương cạnh tranh."
+    answer:
+      "Sinh viên tốt nghiệp có nhiều cơ hội việc làm tại các công ty công nghệ, ngân hàng, viễn thông và các tập đoàn lớn với mức lương cạnh tranh.",
   },
   {
     question: "Làm thế nào để liên hệ với giảng viên chủ nhiệm?",
-    answer: "Thông tin liên hệ của giảng viên chủ nhiệm có thể được tra cứu qua văn phòng Khoa hoặc gửi câu hỏi qua form bên dưới."
-  }
+    answer:
+      "Thông tin liên hệ của giảng viên chủ nhiệm có thể được tra cứu qua văn phòng Khoa hoặc gửi câu hỏi qua form bên dưới.",
+  },
 ];
 
 export default function LandingPage({ onStudentLookup }: LandingPageProps) {
-  const [studentId, setStudentId] = useState('');
-  const [verificationCode, setVerificationCode] = useState('');
+  const [studentId, setStudentId] = useState("");
+  const [verificationCode, setVerificationCode] = useState("");
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
-  // Contact form states
-  const [parentName, setParentName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [contactStudentId, setContactStudentId] = useState('');
-  const [question, setQuestion] = useState('');
+  const [parentName, setParentName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [contactStudentId, setContactStudentId] = useState("");
+  const [question, setQuestion] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleLookup = (e: React.FormEvent) => {
@@ -57,37 +64,40 @@ export default function LandingPage({ onStudentLookup }: LandingPageProps) {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    alert('Câu hỏi của bạn đã được gửi thành công. Chúng tôi sẽ phản hồi qua email trong thời gian sớm nhất.');
+    alert(
+      "Câu hỏi của bạn đã được gửi thành công. Chúng tôi sẽ phản hồi qua email trong thời gian sớm nhất."
+    );
 
-    // Reset form
-    setParentName('');
-    setEmail('');
-    setPhone('');
-    setContactStudentId('');
-    setQuestion('');
+    setParentName("");
+    setEmail("");
+    setPhone("");
+    setContactStudentId("");
+    setQuestion("");
     setIsSubmitting(false);
   };
 
   return (
-    <div className="flex flex-col items-center gap-24 py-12 px-4 max-w-7xl mx-auto bg-zinc-50 dark:bg-zinc-950 min-h-screen">
-      {/* Hero Section - Student Lookup */}
+    <div className="flex flex-col items-center gap-24 px-4 max-w-7xl mx-auto min-h-screen">
       <section className="w-full max-w-2xl">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-zinc-900 dark:text-white mb-4">
-            Tra cứu thông tin học tập
-          </h1>
-          <p className="text-lg text-zinc-600 dark:text-zinc-400">
+          <Heading>Tra cứu thông tin học tập</Heading>
+          <Text className="text-lg text-zinc-600 dark:text-zinc-400">
             Phụ huynh có thể tra cứu thông tin học tập, rèn luyện của sinh viên
-          </p>
+          </Text>
         </div>
 
-        <form onSubmit={handleLookup} className="bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-700 p-8 shadow-sm">
+        <form
+          onSubmit={handleLookup}
+          className="bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-700 p-8 shadow-sm"
+        >
           <div className="space-y-6">
             <div>
-              <label htmlFor="studentId" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
+              <label
+                htmlFor="studentId"
+                className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+              >
                 Mã số sinh viên
               </label>
               <input
@@ -102,7 +112,10 @@ export default function LandingPage({ onStudentLookup }: LandingPageProps) {
             </div>
 
             <div>
-              <label htmlFor="verificationCode" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
+              <label
+                htmlFor="verificationCode"
+                className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+              >
                 Mã xác thực (được cung cấp bởi Khoa)
               </label>
               <input
@@ -144,7 +157,9 @@ export default function LandingPage({ onStudentLookup }: LandingPageProps) {
               className="bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-700 overflow-hidden"
             >
               <button
-                onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
+                onClick={() =>
+                  setExpandedFaq(expandedFaq === index ? null : index)
+                }
                 className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors"
               >
                 <span className="font-medium text-zinc-900 dark:text-white pr-4">
@@ -152,13 +167,18 @@ export default function LandingPage({ onStudentLookup }: LandingPageProps) {
                 </span>
                 <svg
                   className={`w-5 h-5 text-zinc-500 flex-shrink-0 transition-transform ${
-                    expandedFaq === index ? 'rotate-180' : ''
+                    expandedFaq === index ? "rotate-180" : ""
                   }`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
                 </svg>
               </button>
               {expandedFaq === index && (
@@ -178,14 +198,21 @@ export default function LandingPage({ onStudentLookup }: LandingPageProps) {
             Gửi câu hỏi cho Khoa
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400">
-            Nếu có thắc mắc chưa được giải đáp, vui lòng gửi câu hỏi cho chúng tôi
+            Nếu có thắc mắc chưa được giải đáp, vui lòng gửi câu hỏi cho chúng
+            tôi
           </p>
         </div>
 
-        <form onSubmit={handleContactSubmit} className="bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-700 p-8 shadow-sm">
+        <form
+          onSubmit={handleContactSubmit}
+          className="bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-700 p-8 shadow-sm"
+        >
           <div className="space-y-6">
             <div>
-              <label htmlFor="parentName" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
+              <label
+                htmlFor="parentName"
+                className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+              >
                 Họ và tên phụ huynh <span className="text-red-500">*</span>
               </label>
               <input
@@ -200,7 +227,10 @@ export default function LandingPage({ onStudentLookup }: LandingPageProps) {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+              >
                 Email <span className="text-red-500">*</span>
               </label>
               <input
@@ -215,7 +245,10 @@ export default function LandingPage({ onStudentLookup }: LandingPageProps) {
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
+              <label
+                htmlFor="phone"
+                className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+              >
                 Số điện thoại
               </label>
               <input
@@ -229,7 +262,10 @@ export default function LandingPage({ onStudentLookup }: LandingPageProps) {
             </div>
 
             <div>
-              <label htmlFor="contactStudentId" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
+              <label
+                htmlFor="contactStudentId"
+                className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+              >
                 Mã số sinh viên (nếu có)
               </label>
               <input
@@ -243,7 +279,10 @@ export default function LandingPage({ onStudentLookup }: LandingPageProps) {
             </div>
 
             <div>
-              <label htmlFor="question" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
+              <label
+                htmlFor="question"
+                className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+              >
                 Nội dung câu hỏi <span className="text-red-500">*</span>
               </label>
               <textarea
@@ -262,7 +301,7 @@ export default function LandingPage({ onStudentLookup }: LandingPageProps) {
               disabled={isSubmitting}
               className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isSubmitting ? 'Đang gửi...' : 'Gửi câu hỏi'}
+              {isSubmitting ? "Đang gửi..." : "Gửi câu hỏi"}
             </button>
           </div>
         </form>
