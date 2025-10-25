@@ -31,8 +31,7 @@ interface NavData {
 
 const navData: NavData[] = [
   { id: 1, title: "Học bổng", icon: "Trophy" },
-  { id: 2, title: "Thực tập", icon: "Briefcase" },
-  { id: 3, title: "Hoạt động", icon: "Users" },
+  { id: 2, title: "Hoạt động", icon: "Users" },
 ];
 
 export interface Scholarship {
@@ -127,7 +126,7 @@ const Page = () => {
         <div className="px-4 sm:px-8 md:px-20 py-10">
           {/* nav */}
           <div className="bg-[#E2E0DC] rounded-3xl">
-            <div className="mx-20 flex justify-between">
+            <div className="mx-4 sm:mx-10 md:mx-20 flex flex-wrap justify-center md:justify-around gap-3">
               {navData.map((data) => {
                 const Icon = icons[data.icon];
                 const isActive = activeId === data.id;
@@ -135,8 +134,8 @@ const Page = () => {
                   <button
                     key={data.id}
                     onClick={() => setActiveId(data.id)}
-                    className={`text-black flex gap-3 items-center justify-center px-30 py-2 my-3 rounded-2xl transition-all
-                      ${isActive ? "bg-white" : "hover:text-black/70"}`}
+                    className={`text-black flex gap-2 items-center justify-center px-20 py-2 my-2 rounded-2xl transition-all
+    ${isActive ? "bg-white" : "hover:text-black/70"}`}
                   >
                     <Icon size={20} />
                     <p className="font-md">{data.title}</p>
