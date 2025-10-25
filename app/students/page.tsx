@@ -109,13 +109,13 @@ const Page = () => {
     <PublicLayout>
       <div className="w-full bg-white">
         {/* hero */}
-        <div className="flex flex-col gap-4 px-6 sm:px-10 md:px-20 py-10 text-lg text-[#3A4F30] bg-[#E6ECE0]">
+        <div className="flex flex-col gap-4 px-4 sm:px-8 md:px-20 py-10 text-lg text-[#3A4F30] bg-[#E6ECE0]">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center md:text-left">
             Liên hệ với chúng tôi
           </h1>
-          <h1 className="text-lg sm:text-xl md:text-2xl text-center md:text-left">
+          <h2 className="text-base sm:text-xl md:text-2xl text-center md:text-left">
             Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn
-          </h1>
+          </h2>
           <img
             src="https://i2-vnexpress.vnecdn.net/2025/05/22/ptit-jpeg-1747899912-174789995-5968-5954-1747900051.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=2zzDFwpd0SbnNG5b1dEiQg"
             alt="Học viện Công nghệ Bưu chính Viễn thông"
@@ -124,7 +124,7 @@ const Page = () => {
         </div>
 
         {/* content */}
-        <div className="mx-15 py-10">
+        <div className="px-4 sm:px-8 md:px-20 py-10">
           {/* nav */}
           <div className="bg-[#E2E0DC] rounded-3xl">
             <div className="mx-20 flex justify-between">
@@ -145,25 +145,27 @@ const Page = () => {
               })}
             </div>
           </div>
-          {/* scholarship  */}
+
+          {/* scholarship */}
           <div className="py-10">
-            {/*scholarship title */}
-            <div className="mx-30 flex flex-col items-center justify-center gap-3">
-              <h1 className="text-black text-[32px] font-semibold">
+            {/* title */}
+            <div className="flex flex-col items-center justify-center gap-2 text-center mb-10">
+              <h1 className="text-black text-2xl sm:text-3xl md:text-[32px] font-semibold">
                 Chương trình học bổng
               </h1>
-              <h1 className="text-black/50 text-[18px]">
+              <p className="text-black/60 text-base sm:text-lg">
                 Hỗ trợ sinh viên có thành tích xuất sắc và hoàn cảnh khó khăn
-              </h1>
+              </p>
             </div>
-            {/* scholarship card */}
-            <div className="flex flex-col gap-8">
+
+            {/* card grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {scholarshipData.map((item) => {
                 const Icon = icons[item.icon];
                 return (
                   <div
                     key={item.id}
-                    className="p-5 bg-white rounded-2xl border text-black"
+                    className="p-5 bg-white rounded-2xl border text-black hover:shadow-md transition"
                   >
                     <div className="flex items-center gap-3 mb-3">
                       <div
@@ -185,13 +187,31 @@ const Page = () => {
                         </li>
                       ))}
                     </ul>
-                    <p className="flex items-center gap-2 xt-sm text-gray-500 mt-3">
-                      <Calendar size={20} />
+                    <p className="flex items-center gap-2 text-sm text-gray-500 mt-3">
+                      <Calendar size={18} />
                       {item.deadline}
                     </p>
                   </div>
                 );
               })}
+            </div>
+
+            {/* scholar intro */}
+            <div className="mt-10 flex flex-col gap-3 bg-[#E6ECE0] p-6 rounded-3xl text-[#3A4F30]">
+              <h1 className="text-xl sm:text-2xl font-semibold">
+                Hướng dẫn nộp hồ sơ học bổng
+              </h1>
+              <ol className="list-decimal list-inside space-y-1 text-sm sm:text-base">
+                <li>Tải mẫu đơn xin học bổng tại website Khoa.</li>
+                <li>
+                  Chuẩn bị hồ sơ theo yêu cầu (bảng điểm, giấy tờ chứng
+                  minh...).
+                </li>
+                <li>
+                  Nộp hồ sơ trực tiếp tại Văn phòng Khoa hoặc gửi qua email.
+                </li>
+                <li>Chờ thông báo kết quả (thường trong vòng 2–3 tuần).</li>
+              </ol>
             </div>
           </div>
         </div>
