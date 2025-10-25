@@ -8,9 +8,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Nine Education - Flow Anything, Anytime",
+  title: "EduLine - Nền tảng học tập hiện đại",
   description:
-    "Empowering Lifelong Learning with Expert-Led Courses and Resources.",
+    "Kết nối tri thức và công nghệ, mang đến trải nghiệm học tập linh hoạt và hiệu quả cho mọi người.",
 };
 
 export default function RootLayout({
