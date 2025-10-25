@@ -135,7 +135,7 @@ export default function StudentDashboard({ studentId }: StudentDashboardProps) {
           <div>
             <p className="text-sm text-indigo-700 dark:text-indigo-300 mb-1">Mã sinh viên</p>
             <p className="text-lg font-semibold text-indigo-900 dark:text-indigo-50">
-              {studentData._id}
+              {studentData._id.toUpperCase()}
             </p>
           </div>
 
