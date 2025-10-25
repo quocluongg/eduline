@@ -20,7 +20,6 @@ const navLinks = [
   { href: "/about", label: "Giới thiệu" },
   { href: "/parents", label: "Phụ huynh" },
   { href: "/students", label: "Sinh viên" },
-  { href: "/contact", label: "Liên hệ" },
 ];
 
 export default function Navbar() {

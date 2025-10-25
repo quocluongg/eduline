@@ -108,19 +108,11 @@ const Page = () => {
     <PublicLayout>
       <div className="w-full bg-white">
         {/* hero */}
-        <div className="flex flex-col gap-4 px-4 sm:px-8 md:px-20 py-10 text-lg text-[#3A4F30] bg-[#E6ECE0]">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center md:text-left">
-            Liên hệ với chúng tôi
-          </h1>
-          <h2 className="text-base sm:text-xl md:text-2xl text-center md:text-left">
-            Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn
-          </h2>
-          <img
-            src="https://i2-vnexpress.vnecdn.net/2025/05/22/ptit-jpeg-1747899912-174789995-5968-5954-1747900051.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=2zzDFwpd0SbnNG5b1dEiQg"
-            alt="Học viện Công nghệ Bưu chính Viễn thông"
-            className="w-full max-h-[400px] object-cover rounded-3xl"
-          />
-        </div>
+        <img
+          src="https://ptit.edu.vn/wp-content/uploads/2025/06/gen-h-z6725576433040_61ec92e2b71dc98c67dc3603c0a09655.jpg"
+          alt="Học viện Công nghệ Bưu chính Viễn thông"
+          className="w-full min-h-[80%] object-cover"
+        />
 
         {/* content */}
         <div className="px-4 sm:px-8 md:px-20 py-10">
