@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { db } from "../lib/firebase";
-import { doc, getDoc } from "firebase/firestore";
+import { useState, useEffect } from 'react';
+import { db } from '../lib/firebase';
+import { doc, getDoc } from 'firebase/firestore';
+import { scheduleData } from '../students/page';
 
 interface Subject {
   SubjectCode: string;
@@ -327,6 +328,90 @@ export default function StudentDashboard({ studentId }: StudentDashboardProps) {
               )}
             </tbody>
           </table>
+        </div>
+      </div>
+
+      {/* Schedule Calendar */}
+      <div className="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-700 overflow-hidden">
+        <div className="px-6 py-4 border-b border-zinc-200 dark:border-zinc-700">
+          <h2 className="text-xl font-bold text-zinc-900 dark:text-white">
+            Thời khóa biểu tuần
+          </h2>
+        </div>
+
+        <div className="p-6">
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border border-zinc-200 dark:border-zinc-700 table-fixed">
+              <colgroup>
+                <col className="w-32" />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <thead>
+                <tr className="bg-blue-600 dark:bg-blue-800 text-white">
+                  <th className="px-4 py-3 text-left font-semibold border-r border-blue-500">
+                    Thời gian
+                  </th>
+                  {scheduleData.map((day) => (
+                    <th key={day.day} className="px-4 py-3 text-center font-semibold border-r border-blue-500 last:border-r-0">
+                      {day.day}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {scheduleData[0].periods.map((_, periodIndex) => (
+                  <tr key={periodIndex} className="border-t border-zinc-200 dark:border-zinc-700">
+                    <td className="px-4 py-3 font-medium text-zinc-900 dark:text-white bg-zinc-50 dark:bg-zinc-800 border-r border-zinc-200 dark:border-zinc-700">
+                      {scheduleData[0].periods[periodIndex].time}
+                    </td>
+                    {scheduleData.map((day) => {
+                      const period = day.periods[periodIndex];
+                      return (
+                        <td
+                          key={`${day.day}-${periodIndex}`}
+                          className="px-4 py-3 border-r border-zinc-200 dark:border-zinc-700 last:border-r-0"
+                        >
+                          {period.subject ? (
+                            <div className="space-y-1">
+                              <div className="font-semibold text-blue-600 dark:text-blue-400">
+                                {period.subject}
+                              </div>
+                              <div className="text-xs text-zinc-600 dark:text-zinc-400">
+                                {period.room}
+                              </div>
+                              <div className="text-xs text-zinc-500 dark:text-zinc-500">
+                                {period.teacher}
+                              </div>
+                            </div>
+                          ) : (
+                            <div className="text-center text-zinc-400 dark:text-zinc-600">-</div>
+                          )}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Notes */}
+          <div className="mt-6 bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+            <h3 className="text-sm font-semibold text-blue-900 dark:text-blue-100 mb-2">
+              Lưu ý
+            </h3>
+            <ul className="list-disc list-inside space-y-1 text-sm text-blue-800 dark:text-blue-200">
+              <li>Sinh viên cần có mặt trước giờ học 10 phút</li>
+              <li>Mang theo thẻ sinh viên khi vào lớp</li>
+              <li>Lịch học có thể thay đổi, theo dõi thông báo từ giảng viên</li>
+              <li>Liên hệ Phòng Đào tạo nếu có thắc mắc về lịch học</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

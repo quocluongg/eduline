@@ -297,7 +297,7 @@ export default function ChatPopover() {
 
       {/* Chat Popover */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 flex h-[500px] w-[350px] flex-col rounded-lg bg-white shadow-2xl dark:bg-zinc-900">
+        <div className="fixed bottom-24 right-4 sm:right-6 z-50 flex h-[500px] w-[calc(100vw-2rem)] sm:w-[350px] max-w-[350px] flex-col rounded-lg bg-white shadow-2xl dark:bg-zinc-900 overflow-hidden">
           {showAdminLogin ? (
             /* Admin Login Form */
             <>
@@ -314,7 +314,7 @@ export default function ChatPopover() {
                 )}
                 <h3 className="flex-1 font-semibold">Đăng nhập Admin</h3>
               </div>
-              <div className="flex-1 p-6">
+              <div className="flex-1 p-6 overflow-y-auto">
                 <form onSubmit={handleAdminLogin} className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
@@ -355,7 +355,7 @@ export default function ChatPopover() {
               <div className="flex items-center justify-between rounded-t-lg bg-blue-600 px-4 py-3 text-white">
                 <h3 className="font-semibold">Chào mừng đến với Eduline</h3>
               </div>
-              <div className="flex-1 p-6 flex flex-col justify-center">
+              <div className="flex-1 p-6 flex flex-col justify-center overflow-y-auto">
                 <div className="text-center mb-6">
                   <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
                     <svg className="h-8 w-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
