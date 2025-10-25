@@ -68,22 +68,22 @@ const About = () => {
     <PublicLayout>
       <div className="w-full bg-white">
         {/* hero */}
-        <div className="flex flex-col gap-4 px-15 py-10 text-lg text-[#FAF5FF] bg-[#EEECFA]">
-          <h1 className="text-[48px] font-bold text-[#2E1D60]">
+        <div className="flex flex-col gap-4 px-6 sm:px-10 md:px-20 py-10 text-lg text-[#FAF5FF] bg-[#EEECFA]">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2E1D60] text-center md:text-left">
             Liên hệ với chúng tôi
           </h1>
-          <h1 className="text-xl text-[32px] text-[#2E1D60]">
+          <h1 className="text-lg sm:text-xl md:text-2xl text-[#2E1D60] text-center md:text-left">
             Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn
           </h1>
           <img
             src="https://ptit.edu.vn/wp-content/uploads/2025/06/gen-h-z6725576433040_61ec92e2b71dc98c67dc3603c0a09655.jpg"
-            alt=""
-            className="w-full max-h-[400px] object-cover rounded-3xl aspect-square"
+            alt="Học viện Công nghệ Bưu chính Viễn thông"
+            className="w-full max-h-[400px] object-cover rounded-3xl"
           />
         </div>
 
         {/* content */}
-        <div className="flex flex-1 gap-10 py-15 mx-15">
+        <div className="flex flex-col lg:flex-row gap-10 py-10 px-6 sm:px-10 md:px-20">
           {/* left side */}
           <div className="flex flex-1 flex-col">
             <h1 className="text-2xl font-semibold mb-6 text-black">
@@ -101,12 +101,13 @@ const About = () => {
               ))}
             </div>
           </div>
+
           {/* right side */}
           <div className="flex flex-1 flex-col">
             <h1 className="text-2xl font-semibold mb-6 text-black">
               Gửi tin nhắn
             </h1>
-            <div className="flex flex-col items-center gap-4 p-6 border border-black/40 rounded-2xl bg-white text-[#0000008F]">
+            <div className="flex flex-col items-center gap-4 p-6 border border-black/20 rounded-2xl bg-white text-[#0000008F] shadow-sm">
               {/* name */}
               <div className="w-full">
                 <label>Họ và tên *</label>
@@ -140,15 +141,16 @@ const About = () => {
                 />
               </div>
 
-              <Button className="w-full text-lg py-6">
-                <Send />
+              <Button className="w-full text-lg py-6 gap-2">
+                <Send size={18} />
                 Gửi tin nhắn
               </Button>
             </div>
           </div>
         </div>
+
         {/* maps */}
-        <div className="w-full h-[600px] p-15">
+        <div className="w-full h-[400px] sm:h-[500px] lg:h-[600px] px-6 sm:px-10 md:px-20 pb-10">
           <div className="w-full h-full rounded-3xl overflow-hidden shadow-lg">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7837.0647688748595!2d106.77765617937689!3d10.847052785326822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752772b245dff1%3A0xb838977f3d419d!2sPosts%20and%20Telecommunications%20Institute%20of%20Technology%20HCM%20Branch!5e0!3m2!1sen!2s!4v1761372129177!5m2!1sen!2s"
