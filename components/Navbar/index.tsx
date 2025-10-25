@@ -27,14 +27,14 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 w-full bg-[#0A1B74]/90 backdrop-blur-md shadow-md z-50">
-      <div className="lg:px-20 px-6 mx-auto flex justify-between items-center py-4">
+      <div className="lg:px-20 px-6 mx-auto flex justify-between items-center py-2">
         {/* logo */}
         <Link href="/" className="flex items-center gap-2">
           <img src="/logo.svg" alt="logo" className="h-[50px] w-auto" />
         </Link>
 
         {/* desktop nav */}
-        <nav className="hidden md:flex space-x-2 text-lg font-medium">
+        <nav className="hidden md:flex space-x-2 text-sm font-medium">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
