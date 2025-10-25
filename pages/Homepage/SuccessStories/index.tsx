@@ -71,7 +71,7 @@ const SuccessStories = () => {
               height={80}
               className="rounded-full object-cover mb-4 border-2 border-[#10069d]"
             />
-            <h3 className="font-semibold text-lg">{t.name}</h3>
+            <h3 className="font-semibold text-lg text-black">{t.name}</h3>
             <p className="text-sm text-gray-500 mb-3">{t.title}</p>
             {/* content  */}
             <div className=" flex gap-2">
