@@ -6,13 +6,13 @@ const Footer = () => {
       {/* UPPER */}
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
         {/* col 1 */}
-        <div className="flex-1 flex flex-col gap-4 min-w-[250px]">
+        <div className="flex-1 flex flex-col gap-4 min-w-[200px]">
           <h3 className="text-white text-lg  mb-2">
             Khoa Công nghệ Thông tin 2
           </h3>
 
           <div className="flex items-start gap-3">
-            <MapPin size={20} className="text-white mt-1 shrink-0" />
+            <MapPin size={20} className="text-white mt-1" />
             <p>
               Học viện Công nghệ Bưu chính Viễn thông – Cơ sở TP.HCM
               <br />
@@ -21,12 +21,12 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <Phone size={20} className="text-white shrink-0" />
+            <Phone size={20} className="text-white" />
             <p>028.37.305 316</p>
           </div>
 
           <div className="flex items-center gap-3">
-            <Mail size={20} className="text-white shrink-0" />
+            <Mail size={20} className="text-white" />
             <p>fit@ptithcm.edu.vn</p>
           </div>
         </div>
