@@ -1,27 +1,27 @@
 import React from "react";
 import Banner from "./Banner";
-import OurCourses from "./OurCourses";
-import Certi from "./Certificate";
+import Stats from "./Stats";
 import NewAndReasearch from "./NewAndResearch";
 import SuccessStories from "./SuccessStories";
+import News from "./News";
 
 const Homepage = () => {
   return (
-    <div className="w-full flex flex-col gap-20 py-20">
+    <div className="w-full flex flex-col gap-20 lg:py-10 py-4">
       {/* banner */}
       <Banner />
 
-      {/* our courses */}
-      <OurCourses />
-
       {/* certificate */}
-      <Certi />
-
-      {/* news */}
-      <NewAndReasearch />
+      <Stats />
 
       {/* stories */}
       <SuccessStories />
+
+      {/* our courses */}
+      <News />
+
+      {/* news */}
+      <NewAndReasearch />
     </div>
   );
 };
