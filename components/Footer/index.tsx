@@ -2,17 +2,17 @@ import { MapPin, Phone, Mail, YoutubeIcon, FacebookIcon } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#0A1B74] text-[#FFFFFFB3] px-8 py-12">
+    <footer className="w-full bg-[#0A1B74] text-[#FFFFFFB3] px-8 pt-12">
       {/* UPPER */}
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
         {/* col 1 */}
-        <div className="flex-1 flex flex-col gap-4 min-w-[250px]">
+        <div className="flex-1 flex flex-col gap-4 min-w-[200px]">
           <h3 className="text-white text-lg  mb-2">
             Khoa Công nghệ Thông tin 2
           </h3>
 
           <div className="flex items-start gap-3">
-            <MapPin size={20} className="text-white mt-1 shrink-0" />
+            <MapPin size={20} className="text-white mt-1" />
             <p>
               Học viện Công nghệ Bưu chính Viễn thông – Cơ sở TP.HCM
               <br />
@@ -21,12 +21,12 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <Phone size={20} className="text-white shrink-0" />
+            <Phone size={20} className="text-white" />
             <p>028.37.305 316</p>
           </div>
 
           <div className="flex items-center gap-3">
-            <Mail size={20} className="text-white shrink-0" />
+            <Mail size={20} className="text-white" />
             <p>fit@ptithcm.edu.vn</p>
           </div>
         </div>
@@ -57,7 +57,7 @@ const Footer = () => {
       </div>
 
       {/* LOWER */}
-      <div className="border-t border-black/40 mt-10 pt-2 text-center text-sm text-[#FFFFFFB3]">
+      <div className="max-w-7xl mx-auto border-t border-black/40 mt-10 py-2 text-center text-sm text-[#FFFFFFB3]">
         © 2025 Khoa Công nghệ Thông tin 2 - PTIT HCM. Bản quyền thuộc về Học
         viện Công nghệ Bưu chính Viễn thông.
       </div>
